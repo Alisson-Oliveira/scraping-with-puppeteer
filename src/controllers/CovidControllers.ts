@@ -35,7 +35,7 @@ function handleUpdateAt(date: Date) {
 export default {
   async index(request: Request, response: Response) {
     try {
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
       const page = await browser.newPage();
       await page.goto('https://www.jardim.ce.gov.br/', {
         waitUntil: 'load',
