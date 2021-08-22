@@ -41,7 +41,7 @@ export default {
     try {
       const browser = await puppeteer.launch({ 
         headless: true,
-        args: ['--no-sandbox'] 
+        args: ['--no-sandbox', '--ignore-certificate-errors'] 
       });
       const page = await browser.newPage();
       await page.goto('https://www.jardim.ce.gov.br/', {
