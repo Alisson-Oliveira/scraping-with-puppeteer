@@ -4,6 +4,6 @@ const routes = Router();
 
 import CovidControllers from './controllers/CovidControllers';
 
-routes.get('/', CovidControllers.index);
+routes.get('/covid/jardim', CovidControllers.index);
 
 export default routes;

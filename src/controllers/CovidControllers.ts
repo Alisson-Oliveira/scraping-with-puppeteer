@@ -1,7 +1,11 @@
 import { Request, Response } from 'express';
 import puppeteer from 'puppeteer';
 
-function handleUpdateAt(date: Date) {
+function handleUpdateAt(date_utc: Date, offset: number = -3) {
+
+  const milisegundos_com_utc = date_utc.getTime() + (date_utc.getTimezoneOffset() * 60000);
+  const date = new Date(milisegundos_com_utc + (3600000 * offset));
+
   const months = [
     'Janeiro',
     'Fevereiro',

@@ -4,7 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const puppeteer_1 = __importDefault(require("puppeteer"));
-function handleUpdateAt(date) {
+function handleUpdateAt(date_utc, offset = -3) {
+    const milisegundos_com_utc = date_utc.getTime() + (date_utc.getTimezoneOffset() * 60000);
+    const date = new Date(milisegundos_com_utc + (3600000 * offset));
     const months = [
         'Janeiro',
         'Fevereiro',

@@ -6,5 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const routes = express_1.Router();
 const CovidControllers_1 = __importDefault(require("./controllers/CovidControllers"));
-routes.get('/', CovidControllers_1.default.index);
+routes.get('/covid/jardim', CovidControllers_1.default.index);
 exports.default = routes;
